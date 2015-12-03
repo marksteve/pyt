@@ -17,13 +17,10 @@ var game = new Phaser.Game({
   backgroundColor: '#ffffcc',
 })
 
-var cursors
-
 function init() {
   game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
   game.scale.pageAlignVertically = true
   game.scale.pageAlignHorizontally = true
-  cursors = game.input.keyboard.createCursorKeys()
 }
 
 function preload() {
@@ -57,5 +54,4 @@ function update() {
    lleg.angle = -60 + 15 * Math.sin(game.time.now / 200)
    rleg.angle = 60 - 15 * Math.cos(game.time.now / 200)
 }
-
 
