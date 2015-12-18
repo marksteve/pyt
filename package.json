@@ -1,0 +1,22 @@
+{
+  "name": "pyt",
+  "version": "1.0.0",
+  "description": "Pull Yourself Together",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marksteve/pyt.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marksteve/pyt/issues"
+  },
+  "homepage": "https://github.com/marksteve/pyt#readme",
+  "dependencies": {
+    "paper": "^0.9.25"
+  }
+}
