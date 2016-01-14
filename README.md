@@ -16,4 +16,4 @@ make adb-push
 
 ## License
 
-https://marksteve.mit-license.org
+http://marksteve.mit-license.org
