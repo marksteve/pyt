@@ -1,6 +1,7 @@
 flux = require "flux"
 
 function love.load()
+  t = 0
   touches = {}
   effect = love.graphics.newShader [[
       extern number time;
@@ -12,7 +13,7 @@ function love.load()
 end
 
 function drawtouch(i, touch)
-  love.graphics.circle("fill", touch.x, touch.y, 100)
+  love.graphics.circle("line", touch.x, touch.y, touch.r)
 end
 
 function love.draw()
@@ -20,15 +21,19 @@ function love.draw()
   table.foreach(touches, drawtouch)
 end
 
-local t = 0
+function settouchradius(i, touch)
+  touch.r = 100 + 10 * math.cos(t * 10)
+end
+
 function love.update(dt)
   flux.update(dt)
   t = t + dt
   effect:send("time", t)
+  table.foreach(touches, settouchradius)
 end
 
 function love.touchpressed(id, x, y)
-  touches[id] = {x=x, y=y}
+  touches[id] = {x=x, y=y, r=0}
 end
 
 function love.touchmoved(id, x, y)
