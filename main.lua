@@ -32,7 +32,8 @@ function love.touchpressed(id, x, y)
 end
 
 function love.touchmoved(id, x, y)
-  flux.to(touches[id], 0.2, {x=x, y=y})
+  touches[id].x = x
+  touches[id].y = y
 end
 
 function love.touchreleased(id, x, y)
